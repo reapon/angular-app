@@ -1,0 +1,26 @@
+
+<div>{{t.name}}'s Todo</div>
+
+<table class="table table-striped container">
+    <thead>
+        <tr>
+            <th>Todo Number</th>
+            <th>Name</th>
+            <th>IsDone</th>
+    
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of todos; let i = index" >
+            <td>{{i +1 }}</td>
+            <td>{{item.name}}</td>
+            <td [ngSwitch]=item.isDone>
+                <span *ngSwitchCase="true">Done</span>
+                <span *ngSwitchDefault>Not Done</span>
+
+            </td>
+        </tr>
+        
+    </tbody>
+    
+</table>
